@@ -27,5 +27,7 @@ Conceitos abordados:
 - Execute o projeto com `CTRL + F5`
 
 <br>
+
 ---
+
 OBS: projeto desenvolvido com Visual Studio Comunity 2022, utilizando .NET6.0
