@@ -55,17 +55,18 @@
             Console.WriteLine($"Cor: {this.cor}");
             Console.WriteLine($"Porte: {this.porte}");
             Console.WriteLine($"Peso: {this.peso}");
-            Console.WriteLine($"Data nasc.: {this.nascimento.ToShortDateString()}");
+            Console.WriteLine($"Idade: {this.ObterIdade()} ano(s)");
             Console.WriteLine($"Possui necessidades especiais: {this.NecessidadesEspeciais()}");
             if (this.NecessidadesEspeciais())
             {
-                Console.WriteLine("Doenças e Alergias:");
+                Console.WriteLine("\nDoenças e Alergias:");
                 foreach (string doencaAlergia in this.doencasAlergias)
                 {
                     Console.WriteLine(doencaAlergia);
                 }
+                Console.WriteLine();
             }
-            Console.WriteLine($"É agressivo:{this.agressivo}");
+            Console.WriteLine($"É agressivo: {this.agressivo}");
             Console.WriteLine($"Sexo: {this.sexo}");
             Console.WriteLine($"É castrado: {this.castrado}");
             Console.WriteLine($"Data de cadastro: {this.ObterDataCadastro()}");
