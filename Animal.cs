@@ -2,43 +2,69 @@
 {
     internal class Animal
     {
-        private Guid codigo = Guid.NewGuid();
-        public string nome;
-        public Especie especie;
-        public string raca;
-        public string cor;
-        public Porte porte;
-        public decimal peso;
-        public DateTime nascimento;
-        public List<string> doencasAlergias = new();
-        public bool agressivo;
-        public char sexo;
-        public bool castrado;
-        private DateTime dataCadastro = DateTime.Now;
+        private Guid Codigo
+        {
+            get
+            {
+                return Guid.NewGuid();
+            }
+            set
+            {
+            }
+        }
+        public string Nome { get; set; }
+        public Especie Especie { get; set; }
+        public string Raca { get; set; }
+        public string Cor { get; set; }
+        public Porte Porte { get; set; }
+        public decimal Peso { get; set; }
+        public int Idade
+        {
+            get
+            {
+                return ObterIdade();
+            }
+        }
+        public DateTime Nascimento { get; set; }
+        public List<string> DoencasAlergias { get; set; } = new();
+        public bool Agressivo { get; set; }
+        public char Sexo { get; set; }
+        public bool Castrado { get; set; }
+        private DateTime DataCadastro
+        {
+            get
+            {
+                return DateTime.Now;
+            }
+            set
+            {
+
+            }
+        }
         public Guid ObterCodigo()
         {
-            return this.codigo;
+            return this.Codigo;
         }
         public void RegistrarNascimento(int ano, int mes, int dia = 1)  // outra opção seria usar o int? que permite que seja null
         {
-            this.nascimento = new DateTime(ano, mes, dia);
+            this.Nascimento = new DateTime(ano, mes, dia);
         }
         public DateTime ObterDataCadastro()
         {
-            return this.dataCadastro;
+            return this.DataCadastro;
         }
         public void AdicionarDoenca(string doenca)
         {
-            this.doencasAlergias.Add(doenca);
+            this.DoencasAlergias.Add(doenca);
         }
         public bool NecessidadesEspeciais()
         {
-            return this.doencasAlergias.Any();
+            return this.DoencasAlergias.Any();
         }
         public int ObterIdade()
         {
-            int idade = DateTime.Now.Year - nascimento.Year;
-            if (DateTime.Now.DayOfYear < nascimento.DayOfYear)
+            int idade = DateTime.Now.Year - Nascimento.Year;
+            if (DateTime.Now.DayOfYear < Nascimento.DayOfYear)
             {
                 idade--;
             }
@@ -48,27 +74,27 @@
         {
             Console.Clear();
             Console.WriteLine("Imprimindo Pet");
-            Console.WriteLine($"Código: {this.codigo}");
-            Console.WriteLine($"Nome: {this.nome}");
-            Console.WriteLine($"Espécie: {this.especie}");
-            Console.WriteLine($"Raça: {this.raca}");
-            Console.WriteLine($"Cor: {this.cor}");
-            Console.WriteLine($"Porte: {this.porte}");
-            Console.WriteLine($"Peso: {this.peso}");
-            Console.WriteLine($"Idade: {this.ObterIdade()} ano(s)");
+            Console.WriteLine($"Código: {this.Codigo}");
+            Console.WriteLine($"Nome: {this.Nome}");
+            Console.WriteLine($"Espécie: {this.Especie}");
+            Console.WriteLine($"Raça: {this.Raca}");
+            Console.WriteLine($"Cor: {this.Cor}");
+            Console.WriteLine($"Porte: {this.Porte}");
+            Console.WriteLine($"Peso: {this.Peso}");
+            Console.WriteLine($"Idade: {this.Idade} ano(s)");
             Console.WriteLine($"Possui necessidades especiais: {this.NecessidadesEspeciais()}");
             if (this.NecessidadesEspeciais())
             {
                 Console.WriteLine("\nDoenças e Alergias:");
-                foreach (string doencaAlergia in this.doencasAlergias)
+                foreach (string doencaAlergia in this.DoencasAlergias)
                 {
                     Console.WriteLine(doencaAlergia);
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine($"É agressivo: {this.agressivo}");
-            Console.WriteLine($"Sexo: {this.sexo}");
-            Console.WriteLine($"É castrado: {this.castrado}");
+            Console.WriteLine($"É agressivo: {this.Agressivo}");
+            Console.WriteLine($"Sexo: {this.Sexo}");
+            Console.WriteLine($"É castrado: {this.Castrado}");
             Console.WriteLine($"Data de cadastro: {this.ObterDataCadastro()}");
             Console.WriteLine("");
         }

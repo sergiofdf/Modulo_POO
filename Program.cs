@@ -14,25 +14,25 @@ namespace LetsCodePOO
             Animal pet = new Animal();
             Console.WriteLine("Cadastro de animal");
             Console.WriteLine("Qual o nome do animal?");
-            pet.nome = ConsoleSemVazio();
+            pet.Nome = ConsoleSemVazio();
             Console.WriteLine("Qual a raça do animal?");
-            pet.raca = ConsoleSemVazio();
+            pet.Raca = ConsoleSemVazio();
             Console.WriteLine("Qual a cor do animal?");
-            pet.cor = ConsoleSemVazio();
+            pet.Cor = ConsoleSemVazio();
             Console.WriteLine("Qual o peso do animal?");
-            pet.peso = ConsoleDecimalPositivo();
-            Console.WriteLine("Qual a data de nascimento do animal?");
-            pet.nascimento = ConsoleData();
+            pet.Peso = ConsoleDecimalPositivo();
+            Console.WriteLine("Qual a data de nascimento do animal (dd-mm-aaaa)?");
+            pet.Nascimento = ConsoleData();
             Console.WriteLine("O animal é agressivo?");
-            pet.agressivo = ConsoleBool("Não é agressivo", "É agressivo");
+            pet.Agressivo = ConsoleBool("Não é agressivo", "É agressivo");
             Console.WriteLine("Qual o sexo do animal?");
-            pet.sexo = ConsoleSexo();
+            pet.Sexo = ConsoleSexo();
             Console.WriteLine("O animal é castrado?");
-            pet.castrado = ConsoleBool("Não é castrado", "É castrado");
+            pet.Castrado = ConsoleBool("Não é castrado", "É castrado");
             Console.WriteLine("Qual a espécie do animal?");
-            pet.especie = ConsoleEspecie();
+            pet.Especie = ConsoleEspecie();
             Console.WriteLine("Qual o porte do animal?");
-            pet.porte = ConsolePorte();
+            pet.Porte = ConsolePorte();
             Console.WriteLine("O animal possui alguma doença ou alergia?");
             bool possuiAlergiaOuDoenca = ConsoleBool("Não possui", "Possui");
             if (possuiAlergiaOuDoenca)
@@ -79,6 +79,10 @@ namespace LetsCodePOO
         {
             DateTime dataDigitada = DateTime.MinValue;
             bool entradaDataValida = false;
+
+            //Regex Data
+            // \b([0-2]{0,1}[1-9]|(3)[0-1])(\/)(((0){0,1}[1-9])|((1)[0-2]))(\/)\d{4}\b
+
             while (!entradaDataValida)
             {
                 entradaDataValida = DateTime.TryParse(ConsoleSemVazio(), out dataDigitada);
