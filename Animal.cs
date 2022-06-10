@@ -32,14 +32,7 @@
         public bool Castrado { get; set; }
         private DateTime DataCadastro
         {
-            get
-            {
-                return DateTime.Now;
-            }
-            set
-            {
-
-            }
+            get { return DateTime.Now; }
         }
         public Guid ObterCodigo()
         {
