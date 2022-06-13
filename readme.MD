@@ -10,7 +10,8 @@ Conceitos abordados:
 - Aplicação de conceitos de lógica de programação vistos no módulo 1 do curso;
 - Criação de classes;
 - Definição de Modificadores de Acesso;
-- Encapsulamento
+- Encapsulamento;
+- Definição de propriedades com getters e setters;
 
 <br>
 

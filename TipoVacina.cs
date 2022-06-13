@@ -1,15 +1,18 @@
 ﻿namespace Modulo_POO
 {
-    internal class TipoVacina
+    public class TipoVacina
     {
-        private Guid IdUnicoVacina = Guid.NewGuid();
-        public string nome;
-        public int mesesDuracao;
-        public List<Especie> especies;
+        public Guid IdUnicoVacina { get; }
+        public string Nome { get; set; }
+        public int MesesDuracao { get; set; }
+        public List<Especie> Especies;
 
-        public Guid ObterIdUnicoVacina()
+        public TipoVacina(string nome, int mesesDuracao, List<Especie> especieis)
         {
-            return IdUnicoVacina;
+            IdUnicoVacina = Guid.NewGuid();
+            Nome = nome;
+            MesesDuracao = mesesDuracao;
+            Especies = especieis;
         }
     }
 }
