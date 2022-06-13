@@ -3,16 +3,14 @@
     public class TipoVacina
     {
         public Guid IdUnicoVacina { get; }
-        public string Nome { get; set; }
-        public int MesesDuracao { get; set; }
-        public List<Especie> Especies;
+        public string Nome { get; }
+        public int MesesDuracao { get; }
 
-        public TipoVacina(string nome, int mesesDuracao, List<Especie> especieis)
+        public TipoVacina(string nome, int mesesDuracao)
         {
             IdUnicoVacina = Guid.NewGuid();
             Nome = nome;
             MesesDuracao = mesesDuracao;
-            Especies = especieis;
         }
     }
 }

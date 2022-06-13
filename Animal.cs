@@ -17,6 +17,8 @@
         public char Sexo { get; set; }
         public bool Castrado { get; set; }
         private DateTime DataCadastro { get; }
+        public List<Vacina> CarteiraVacinacao { get; set; } = new();
+
         //Construtor
         public Animal(string nome, Especie especie, string raca, string cor, Porte porte, decimal peso, DateTime nascimento, bool agressivo, char sexo, bool castrado)
         {
@@ -79,6 +81,18 @@
             Console.WriteLine($"Sexo: {Sexo}");
             Console.WriteLine($"É castrado: {Castrado}");
             Console.WriteLine($"Data de cadastro: {DataCadastro}");
+
+            if (CarteiraVacinacao.Any())
+            {
+                Console.WriteLine("\nLista de Vacinas Cadastradas");
+                foreach (var vacina in CarteiraVacinacao)
+                {
+                    Console.WriteLine($"Id: {vacina.IdVacina}");
+                    Console.WriteLine($"Nome Vacina: {vacina.TipoVacina.Nome}");
+                    Console.WriteLine($"Data Aplicação Vacina: {vacina.DataAplicacao.ToShortDateString()}\n");
+                }
+            }
+
             Console.WriteLine("");
         }
     }
